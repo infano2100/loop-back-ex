@@ -1,0 +1,17 @@
+version: '3.4'
+
+networks:
+  modelnetwork:
+
+services:
+  postgresql:
+    container_name: postgresql_traceabilityoverseamodel
+    image: postgres:9.6.18-alpine
+    environment:
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_USER: 'username'
+      POSTGRES_DB: 'db'
+    ports:
+      - 5432:5432
+    networks:
+      - modelnetwork
